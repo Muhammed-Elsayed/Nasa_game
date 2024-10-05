@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import FactoryRow from "./FactoryRow";
 import FactoryImage from "./FactoryImage";
-import FactoryEmissions from "./factoryEmissions";
+import FactoryEmissions from "./FactoryEmissions";
 
 const Div = styled.div`
   width: 485px;
