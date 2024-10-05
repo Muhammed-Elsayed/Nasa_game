@@ -90,7 +90,9 @@ function AiResult() {
   // Send data to the AI model (POST request)
   const sendDataToAi = async () => {
     setLoading(true);
-    setStatus("Data is sending..."); // Update status when sending data
+    setStatus("Data is sending...");
+
+    console.log("Sending Data: ", JSON.stringify(dataFromStore)); // Check the data
 
     try {
       const response = await fetch(
@@ -100,15 +102,16 @@ function AiResult() {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(dataFromStore), // Send your data here
+          body: JSON.stringify(dataFromStore),
         }
       );
 
+      console.log("Response: ", response); // Check the raw response
+
       if (response.ok) {
-        // Successfully sent data
-        setStatus("Ready to get Data"); // Update status after sending data
+        setStatus("Ready to get Data");
       } else {
-        console.error("Error in POST request");
+        console.error("Error in POST request:", response.statusText);
         setStatus("Error sending data");
       }
     } catch (error) {
@@ -121,12 +124,13 @@ function AiResult() {
 
   // Get data from the AI model (GET request)
   const getDataFromAi = async () => {
+    console.log(dataFromStore);
     setLoading(true);
     setStatus("Getting data..."); // Update status when fetching data
 
     try {
       const response = await fetch(
-        "https://ahmed1122.pythonanywhere.com/predict "
+        "https://ahmed1122.pythonanywhere.com/predict"
       );
       if (response.ok) {
         const data = await response.json();

@@ -13,6 +13,7 @@ const Video = styled.video`
   transition: opacity 2s ease;
   border-radius: 15%; /* Apply border-radius to round the corners */
   background-color: #000012;
+
   /* opacity: 0.6; */
   /* mix-blend-mode: overlay; Blends the image with the video */
 
