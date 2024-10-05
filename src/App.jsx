@@ -24,7 +24,7 @@ function App() {
   return (
     <>
       <BackGround
-        url={`${FILE}${VIDEO}.mp4`}
+        url={`/${VIDEO}.mp4`}
         playbackSpeed="0.8"
         img={`${FILE}/nasa data/${IMAGE}.png`}
       />
