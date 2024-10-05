@@ -13,7 +13,7 @@ const Div = styled.div`
 `;
 
 function Ice() {
-  const temp = useStore((state) => state.factory);
+  const temp = useStore((state) => state.factoryEmissions);
   return (
     <Div>
       <IceRow />
