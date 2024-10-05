@@ -9,7 +9,7 @@ const Div = styled.div`
   height: 196px;
   display: flex;
   flex-direction: column;
-  background: url("../../public/nasa data/icePixel.gif");
+  background: url("/nasa data/icePixel.gif");
 `;
 
 function Ice() {

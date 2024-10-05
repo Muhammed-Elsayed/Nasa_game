@@ -7,7 +7,7 @@ const Div = styled.div`
   height: 230px;
   /* background-color: blue; */
   display: flex;
-  background: url("../../public/nasa data/SeaPixel.gif");
+  background: url("/nasa data/SeaPixel.gif");
   flex-direction: column;
   gap: 2px;
 

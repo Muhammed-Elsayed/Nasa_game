@@ -146,7 +146,7 @@ function AiResult() {
 
   return (
     <>
-      <Image src={"../../public/nasa data/ai.png"} alt="Reaction GIF" />
+      <Image src={"/nasa data/ai.png"} alt="Reaction GIF" />
       <h2 style={{ textAlign: "center", color: "white" }}>{status}</h2>
       <div
         style={{

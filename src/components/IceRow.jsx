@@ -23,7 +23,7 @@ function IceRow({ marginTop = "", bottom = "", top = "" }) {
   return (
     <Row marginTop={marginTop} top={top} bottom={bottom}>
       {myArray.map((_, index) => (
-        <WhitePixel key={index} image="../../public/nasa data/icePixel.gif" />
+        <WhitePixel key={index} image="/nasa data/icePixel.gif" />
       ))}
     </Row>
   );

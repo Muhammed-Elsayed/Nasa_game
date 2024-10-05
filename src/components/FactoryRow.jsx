@@ -13,10 +13,7 @@ const Row = styled.div`
 `;
 
 let myArray = new Array(20).fill(null);
-let twoTypes = [
-  "../../public/nasa data/FactoryCementPixel.png",
-  "../../public/nasa data/factortyStreatPixel.png",
-];
+
 function FactoryRow({ url }) {
   return (
     <Row>

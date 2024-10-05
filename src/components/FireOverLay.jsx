@@ -21,7 +21,7 @@ function FireOverLay() {
     factoryEmissions >= 4 && (
       <Image
         className="animate__animated animate__fadeIn"
-        src="../../public/nasa data/humidity.gif"
+        src="/nasa data/humidity.gif"
       />
     )
   );

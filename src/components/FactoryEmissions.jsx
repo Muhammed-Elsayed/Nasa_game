@@ -15,20 +15,17 @@ function FactoryEmissions() {
   return (
     <>
       {factoryEmissionsImages >= 1 && (
-        <Image
-          src={"../../public/nasa data/smoke.gif"}
-          style={{ top: "-100px" }}
-        />
+        <Image src={"/nasa data/smoke.gif"} style={{ top: "-100px" }} />
       )}
       {factoryEmissionsImages >= 2 && (
         <Image
-          src={"../../public/nasa data/smoke.gif"}
+          src={"/nasa data/smoke.gif"}
           style={{ top: "-100px", left: "170px" }}
         />
       )}
       {factoryEmissionsImages >= 3 && (
         <Image
-          src={"../../public/nasa data/smoke.gif"}
+          src={"/nasa data/smoke.gif"}
           style={{ top: "-100px", left: "340px" }}
         />
       )}

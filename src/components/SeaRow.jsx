@@ -15,7 +15,7 @@ function SeaRow() {
   return (
     <Row>
       {myArray.map((_, index) => (
-        <BluePixel key={index} image="../../public/nasa data/SeaPixel.gif" />
+        <BluePixel key={index} image="/nasa data/SeaPixel.gif" />
       ))}
     </Row>
   );

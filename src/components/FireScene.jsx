@@ -26,11 +26,7 @@ function FireScene() {
   return (
     <>
       {factoryEmissions > 4 ? (
-        <Image
-          src="../../public/nasa data/pureFirePro.gif"
-          top={top}
-          left={left}
-        />
+        <Image src="/nasa data/pureFirePro.gif" top={top} left={left} />
       ) : null}
     </>
   );

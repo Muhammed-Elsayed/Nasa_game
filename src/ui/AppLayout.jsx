@@ -51,7 +51,7 @@ function AppLayout() {
     <>
       <Header>
         <H1>Mini Earth </H1>
-        <Image src="../../public/nasa data/istockphoto-1226218465-640-adp-unscreen.gif"></Image>
+        <Image src="/nasa data/istockphoto-1226218465-640-adp-unscreen.gif"></Image>
       </Header>
       <Container>
         <Map />

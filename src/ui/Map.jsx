@@ -23,11 +23,10 @@ function Map() {
   return (
     <StyledMap>
       {!isVideoFinished ? (
-        <MainBG url={`../../public/nasa data/MainBG.mp4`} />
+        <MainBG url={`/nasa data/MainBG.mp4`} />
       ) : (
         <GameGrid />
       )}
-      {/* <GameGrid /> */}
     </StyledMap>
   );
 }

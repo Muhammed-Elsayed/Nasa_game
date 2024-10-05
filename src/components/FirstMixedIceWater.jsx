@@ -21,27 +21,27 @@ function FirstMixedIceWater({ levelOfWater, rounded }) {
     return (
       <Row className="animate__animated animate__fadeIn">
         {waterRounded.map((_, index) => (
-          <BluePixel key={index} image="../../public/nasa data/SeaPixel.gif" />
+          <BluePixel key={index} image="/nasa data/SeaPixel.gif" />
         ))}
         {ice2.map((_, index) => (
-          <WhitePixel key={index} image="../../public/nasa data/icePixel.gif" />
+          <WhitePixel key={index} image="/nasa data/icePixel.gif" />
         ))}
 
         {waterRounded.map((_, index) => (
-          <BluePixel key={index} image="../../public/nasa data/SeaPixel.gif" />
+          <BluePixel key={index} image="/nasa data/SeaPixel.gif" />
         ))}
       </Row>
     );
   return (
     <Row className="animate__animated animate__fadeIn">
       {ice1.map((_, index) => (
-        <WhitePixel key={index} image="../../public/nasa data/icePixel.gif" />
+        <WhitePixel key={index} image="/nasa data/icePixel.gif" />
       ))}
       {water.map((_, index) => (
-        <BluePixel key={index} image="../../public/nasa data/SeaPixel.gif" />
+        <BluePixel key={index} image="/nasa data/SeaPixel.gif" />
       ))}
       {ice2.map((_, index) => (
-        <WhitePixel key={index} image="../../public/nasa data/icePixel.gif" />
+        <WhitePixel key={index} image="/nasa data/icePixel.gif" />
       ))}
     </Row>
   );

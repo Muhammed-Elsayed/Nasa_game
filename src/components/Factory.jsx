@@ -15,17 +15,17 @@ const Div = styled.div`
 function Factory() {
   return (
     <Div>
-      <FactoryRow url={"../../public/nasa data/FactoryCementPixel.png"} />
-      <FactoryRow url={"../../public/nasa data/FactoryCementPixel.png"} />
-      <FactoryRow url={"../../public/nasa data/factortyStreatPixel.png"} />
-      <FactoryRow url={"../../public/nasa data/FactoryCementPixel.png"} />
-      <FactoryRow url={"../../public/nasa data/FactoryCementPixel.png"} />
-      <FactoryRow url={"../../public/nasa data/factortyStreatPixel.png"} />
-      <FactoryRow url={"../../public/nasa data/FactoryCementPixel.png"} />
-      <FactoryRow url={"../../public/nasa data/FactoryCementPixel.png"} />
-      <FactoryImage url={"../../public/nasa data/single.png"} />
-      <FactoryImage left={"170px"} url={"../../public/nasa data/twin.png"} />
-      <FactoryImage left={"340px"} url={"../../public/nasa data/badBG.png"} />
+      <FactoryRow url={"/nasa data/FactoryCementPixel.png"} />
+      <FactoryRow url={"/nasa data/FactoryCementPixel.png"} />
+      <FactoryRow url={"/nasa data/factortyStreatPixel.png"} />
+      <FactoryRow url={"/nasa data/FactoryCementPixel.png"} />
+      <FactoryRow url={"/nasa data/FactoryCementPixel.png"} />
+      <FactoryRow url={"/nasa data/factortyStreatPixel.png"} />
+      <FactoryRow url={"/nasa data/FactoryCementPixel.png"} />
+      <FactoryRow url={"/nasa data/FactoryCementPixel.png"} />
+      <FactoryImage url={"/nasa data/single.png"} />
+      <FactoryImage left={"170px"} url={"/nasa data/twin.png"} />
+      <FactoryImage left={"340px"} url={"/nasa data/badBG.png"} />
       <FactoryEmissions />
     </Div>
   );
