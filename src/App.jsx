@@ -5,8 +5,8 @@ import "./index.css";
 import AppLayout from "./ui/AppLayout";
 import { useEffect, useState } from "react";
 
-const FILE = "../public/";
-const VIDEO = "istockphoto-1690940931-640_adpp_is";
+const FILE = "/";
+const VIDEO = "";
 const IMAGE = "stars";
 
 const Div = styled.div`
@@ -24,9 +24,9 @@ function App() {
   return (
     <>
       <BackGround
-        url={`/${VIDEO}.mp4`}
+        url={`/istockphoto-1690940931-640_adpp_is.mp4`}
         playbackSpeed="0.8"
-        img={`${FILE}/nasa data/${IMAGE}.png`}
+        img={`${FILE}nasa data/${IMAGE}.png`}
       />
 
       <AppLayout />
