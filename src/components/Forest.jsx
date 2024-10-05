@@ -14,6 +14,7 @@ const Div = styled.div`
   flex-direction: column;
   margin-top: 60px;
   position: relative;
+  border-top-right-radius: 30px; /* Top right corner */
 `;
 
 function Forest() {

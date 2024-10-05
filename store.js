@@ -24,7 +24,7 @@ const useStore = create((set) => ({
   generate: false,
   gameStarted: false,
   setGameStarted: (gameStarted) => {
-    console.log("setPlaying called with:", gameStarted); // Log state updates
+    // console.log("setPlaying called with:", gameStarted); // Log state updates
     set({ gameStarted });
   },
   numOfForestAnimals: 20,
@@ -78,7 +78,7 @@ const useStore = create((set) => ({
     })),
   setFactoryEmissions: (value) =>
     set((state) => ({
-      factoryEmissions: Math.max(0, Math.min(value, 500)), // Max 500, Min 0
+      factoryEmissions: Math.max(0, Math.min(value, 6)), // Max 500, Min 0
     })),
   setWindSpeed: (value) => set({ windSpeed: value }),
   setWindDirection: (value) =>

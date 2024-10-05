@@ -10,6 +10,8 @@ const Div = styled.div`
   flex-direction: column;
   position: relative;
   margin-top: 10px;
+  /* overflow: hidden; */
+  border-bottom-right-radius: 30px; /* Bottom right corner */
 `;
 
 function Factory() {

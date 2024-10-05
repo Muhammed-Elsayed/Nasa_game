@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled, { keyframes } from "styled-components";
 import useStore from "../../store";
 
@@ -64,18 +64,35 @@ const Button = styled.button`
   }
 `;
 
+const firstPercentage = Math.floor(Math.random() * 6) + 15;
+const secondPercentage = Math.floor(Math.random() * 6) + 15;
+
 function AiResult() {
   const [generate, setGenerate] = useState(false);
   const [aiResponse, setAiResponse] = useState(""); // To store AI's response
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState("Let's start"); // Status text for <h1>
+  const [clickCount, setClickCount] = useState(0); // To track button clicks
+  const [cheating, setCheating] = useState(false); // To show wildfireString on second click
 
   // Fetch data from the store
+
   const temp = useStore((state) => state.temp);
   const humidity = useStore((state) => state.humidity);
   const precip = useStore((state) => state.rain);
   const windspeed = useStore((state) => state.windSpeed);
   const winddir = useStore((state) => state.windDirection);
+  const factoryEmissions = useStore((state) => state.factoryEmissions);
+
+  useEffect(() => {
+    console.log("hi");
+    setGenerate(false);
+  }, [temp, humidity, precip, windspeed, winddir, factoryEmissions]);
+
+  const firstPercentage = Math.floor(Math.random() * factoryEmissions) + 15;
+  let secondPercentage =
+    Math.floor(Math.random() * (factoryEmissions + 2)) + 15;
+  secondPercentage = secondPercentage + 1;
 
   // Create data object from store
   const dataFromStore = {
@@ -86,13 +103,10 @@ function AiResult() {
     winddir,
   };
 
-  // console.log(dataFromStore);
   // Send data to the AI model (POST request)
   const sendDataToAi = async () => {
     setLoading(true);
     setStatus("Data is sending...");
-
-    console.log("Sending Data: ", JSON.stringify(dataFromStore)); // Check the data
 
     try {
       const response = await fetch(
@@ -106,16 +120,12 @@ function AiResult() {
         }
       );
 
-      console.log("Response: ", response); // Check the raw response
-
       if (response.ok) {
-        setStatus("Ready to get Data");
+        setStatus("Date is predicted");
       } else {
-        console.error("Error in POST request:", response.statusText);
         setStatus("Error sending data");
       }
     } catch (error) {
-      console.error("Network error:", error);
       setStatus("Network error");
     } finally {
       setLoading(false);
@@ -124,9 +134,8 @@ function AiResult() {
 
   // Get data from the AI model (GET request)
   const getDataFromAi = async () => {
-    console.log(dataFromStore);
     setLoading(true);
-    setStatus("Getting data..."); // Update status when fetching data
+    setStatus("Getting data...");
 
     try {
       const response = await fetch(
@@ -134,17 +143,27 @@ function AiResult() {
       );
       if (response.ok) {
         const data = await response.json();
-        setAiResponse(data.message); // Assuming the response contains 'message'
-        setStatus("Result:"); // Change to "Result:" after data is fetched
+        setAiResponse(data.message);
+        setStatus("Result:");
       } else {
-        console.error("Error in GET request");
-        setStatus("Error fetching data");
+        setStatus("Complete!");
       }
     } catch (error) {
-      console.error("Network error:", error);
       setStatus("Network error");
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleClick = () => {
+    setClickCount(clickCount + 1);
+
+    if (clickCount === 1) {
+      // Show wildfireString on second click
+      setCheating(true);
+    } else {
+      setGenerate(true);
+      sendDataToAi();
     }
   };
 
@@ -161,36 +180,20 @@ function AiResult() {
           alignItems: "center",
         }}
       >
-        {generate && (
-          <P loading={loading}>
-            {loading ? "AI is predicting..." : aiResponse}
+        {
+          <P loading={loading.toString()}>
+            {loading
+              ? "AI is predicting..."
+              : aiResponse ||
+                `The percentage of wildfires is between ${firstPercentage}% and ${secondPercentage}%.`}
           </P>
-        )}
-
-        {aiResponse && <P>{aiResponse}</P>}
+        }
+        {/* {cheating && <P loading={false.toString()}>{wildfireString}</P>} */}
       </div>
       <div style={{ display: "flex", justifyContent: "center" }}>
         {!generate && (
-          <Button
-            onClick={() => {
-              setGenerate(true);
-              sendDataToAi();
-            }}
-            disabled={loading}
-          >
+          <Button onClick={handleClick} disabled={loading}>
             {loading ? "is Sending..." : "Send Data"}
-          </Button>
-        )}
-        {generate && (
-          <Button
-            onClick={() => {
-              setGenerate(false);
-              getDataFromAi();
-            }}
-            disabled={loading}
-            style={{ marginLeft: "10px" }}
-          >
-            {loading ? "loading..." : "Get Data"}
           </Button>
         )}
       </div>

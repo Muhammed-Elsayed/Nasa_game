@@ -9,7 +9,10 @@ const Div = styled.div`
   height: 196px;
   display: flex;
   flex-direction: column;
+  border-top-left-radius: 30px; /* Top left corner */
+
   background: url("/nasa data/icePixel.gif");
+  overflow: hidden;
 `;
 
 function Ice() {

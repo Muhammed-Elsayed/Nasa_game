@@ -11,6 +11,8 @@ const Div = styled.div`
   flex-direction: column;
   gap: 2px;
 
+  border-bottom-left-radius: 30px; /* Bottom left corner */
+
   /* border: 1px white solid; */
 `;
 
