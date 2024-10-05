@@ -13,7 +13,7 @@ const Div = styled.div`
 `;
 
 function Ice() {
-  const temp = useStore((state) => state.temp);
+  const temp = useStore((state) => state.factory);
   return (
     <Div>
       <IceRow />
@@ -21,23 +21,23 @@ function Ice() {
       <IceRow />
       <IceRow />
       <IceRow />
-      {temp >= 50 ? (
+      {temp >= 6 ? (
         <FirstMixedIceWater levelOfWater={2} rounded={true} />
       ) : (
         <IceRow />
       )}
-      {temp > 47 ? (
+      {temp > 6 ? (
         <FirstMixedIceWater levelOfWater={4} rounded={true} />
       ) : (
         <IceRow />
       )}
-      {temp > 45 ? (
+      {temp > 5 ? (
         <FirstMixedIceWater levelOfWater={6} rounded={true} />
       ) : (
         <IceRow />
       )}
       {/* do it dynamically */}
-      {temp > 40 ? (
+      {temp > 4 ? (
         <FirstMixedIceWater levelOfWater={10} rounded={false} />
       ) : (
         <IceRow />
