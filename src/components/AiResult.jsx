@@ -180,14 +180,14 @@ function AiResult() {
           alignItems: "center",
         }}
       >
-        {
+        {generate && (
           <P loading={loading.toString()}>
             {loading
               ? "AI is predicting..."
               : aiResponse ||
                 `The percentage of wildfires is between ${firstPercentage}% and ${secondPercentage}%.`}
           </P>
-        }
+        )}
         {/* {cheating && <P loading={false.toString()}>{wildfireString}</P>} */}
       </div>
       <div style={{ display: "flex", justifyContent: "center" }}>
